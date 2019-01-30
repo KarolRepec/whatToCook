@@ -1,16 +1,30 @@
 package org.repec.karol.superstar;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class Dish {
-    List<Ingredient> ingrediends = new ArrayList<Ingredient>();
+public class Dish
+{
+    String name;
+    ArrayList<Ingredient> ingrList;
 
-    public Dish() {
-        ingrediends.add(new Ingredient());
+    public Dish(String name)
+    {
+        this.name = name;
+        ingrList = new ArrayList<Ingredient>();
     }
 
-    public List<Ingredient> getIngrediends() {
-        return ingrediends;
+    public void setDish( String[] args )
+    {
+        for (int i = 1; i < args.length; i++) {
+                Ingredient ingredient = new Ingredient(i, args[i], args[i]);
+                ingrList.add(ingredient);
+        }
+
     }
+
+    public ArrayList<Ingredient> getIngrList()
+    {
+        return ingrList;
+    }
+
 }

@@ -5,7 +5,7 @@ public class Ingredient {
     String name;
     String description;
 
-    static Ingredient(int id, String name, String description){
+    public Ingredient(int id, String name, String description){
         this.id = id;
         this.name = name;
         this.description = description;
@@ -27,11 +27,18 @@ public class Ingredient {
         this.name = name;
     }
 
-    public String getDescription{
+    public String getDescription(){
         return description;
     }
 
     public void setDescription(){
         this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return ("id:"+this.getId()+
+                " name: "+ this.getName() +
+                " description: "+ this.getDescription());
     }
 }
