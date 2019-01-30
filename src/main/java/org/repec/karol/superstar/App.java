@@ -14,4 +14,6 @@ public class App
         newDish.setDish(args);
         System.out.println(newDish.getIngrList());
     }
+
+
 }
