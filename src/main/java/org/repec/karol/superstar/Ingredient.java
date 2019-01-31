@@ -1,44 +1,44 @@
 package org.repec.karol.superstar;
 
 public class Ingredient {
-    int id;
-    String name;
-    String description;
+    private int id;
+    private String name;
+    private String description;
 
-    public Ingredient(int id, String name, String description){
+    Ingredient(int id, String name, String description) {
         this.id = id;
         this.name = name;
         this.description = description;
     }
 
-    public Integer getId(){
+    private Integer getId() {
         return id;
     }
 
-    public void setId(){
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getName(){
+    private String getName() {
         return name;
     }
 
-    public void setName(){
+    public void setName() {
         this.name = name;
     }
 
-    public String getDescription(){
+    private String getDescription() {
         return description;
     }
 
-    public void setDescription(){
+    public void setDescription() {
         this.description = description;
     }
 
     @Override
     public String toString() {
-        return ("id:"+this.getId()+
-                " name: "+ this.getName() +
-                " description: "+ this.getDescription());
+        return ("id:" + this.getId() +
+                " name: " + this.getName() +
+                " description: " + this.getDescription());
     }
 }
