@@ -19,7 +19,7 @@ public class Ingredient {
         this.id = id;
     }
 
-    private String getName() {
+    public String getName() {
         return name;
     }
 

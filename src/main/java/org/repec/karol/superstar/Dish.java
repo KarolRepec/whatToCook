@@ -13,6 +13,7 @@ class Dish {
     }
 
     public void setIngrList(ArrayList<Ingredient> ingrList) {
+
         this.ingrList = ingrList;
     }
 
@@ -27,5 +28,6 @@ class Dish {
     List<Ingredient> getIngredientsList() {
         return ingrList;
     }
+
 
 }
