@@ -12,6 +12,10 @@ class Dish {
         ingrList = new ArrayList<>();
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void setIngrList(ArrayList<Ingredient> ingrList) {
 
         this.ingrList = ingrList;

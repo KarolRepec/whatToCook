@@ -1,12 +1,19 @@
 package org.repec.karol.superstar;
 
 import java.util.ArrayList;
-import java.util.Objects;
+import java.util.List;
+
 
 public class App {
     public static void main(String[] args) {
 
+        App app = new App();
+        app.lookup(app.setDishList(), app.userIngredients());
 
+    }
+
+
+    public ArrayList setDishList() {
         // Create dishList
 
         ArrayList<Dish> dishList = new ArrayList<Dish>();
@@ -56,30 +63,7 @@ public class App {
         spagetti.setIngrList(ingredientsSpagetti);
         dishList.add(spagetti);
 
-
-        // Create ingredient list simulating user's input
-
-        ArrayList<String> myIngredients = new ArrayList<>();
-        myIngredients.add("jajka");
-        myIngredients.add("maslo");
-        myIngredients.add("kielbasa");
-
-
-        // Run lookup method
-
-
-        ArrayList<Dish> newDishList = lookup(dishList, myIngredients);
-
-
-        // test lookup metchod
-
-        for (int i = 0; i < newDishList.size(); i++) {
-
-            for (Ingredient t : dishList.get(i).getIngredientsList()) {
-                System.out.println(t);
-            }
-        }
-
+        return dishList;
 
         //Lambda
 //        nalesniki.getIngredientsList()
@@ -91,9 +75,20 @@ public class App {
 //        }
 
 
-        // Create lookup method. Inputs are dishlist and list of ingredients input by user
     }
-    public static ArrayList lookup(ArrayList<Dish> dishList, ArrayList<String> userIngredients){
+
+    public ArrayList userIngredients() {
+        // Simulates user input
+
+        ArrayList<String> myIngredients = new ArrayList<>();
+        myIngredients.add("jajka");
+        myIngredients.add("maslo");
+        myIngredients.add("kielbasa");
+        return myIngredients;
+    }
+
+
+    public ArrayList lookup(ArrayList<Dish> dishList, ArrayList<String> userIngredients){
 
 
         // Create collection of dishes that includes ingredients same as ones input by user
@@ -105,7 +100,7 @@ public class App {
             //create temp arraylist
             ArrayList<String> dishIngredients = new ArrayList<>();
 
-            //extract ingredients name from form each dish in dishList and add them to temp array
+            //extract ingredients name from each dish in dishList and add them to temp array
             for (Ingredient t : dishList.get(i).getIngredientsList()) {
                 dishIngredients.add(t.getName());
             }
@@ -126,6 +121,12 @@ public class App {
             }
 
         }
+        // Print result
+        for (int i = 0; i < matchedDishList.size(); i++) {
+            System.out.println(matchedDishList.get(i).getName());
+        }
+
+
         return matchedDishList;
     }
 }
