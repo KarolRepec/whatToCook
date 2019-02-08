@@ -8,7 +8,9 @@ public class App {
     public static void main(String[] args) {
 
         App app = new App();
-        app.lookup(app.setDishList(), app.userIngredients());
+
+        app.lookup(app.setDishList(), app.userIngredients(new String[] {"jajka"}));
+        System.out.println(app.userIngredients(new String[] {"jajka"}));
 
     }
 
@@ -77,13 +79,13 @@ public class App {
 
     }
 
-    public ArrayList userIngredients() {
+    public ArrayList userIngredients(String[] userIngredients) {
         // Simulates user input
 
         ArrayList<String> myIngredients = new ArrayList<>();
-        myIngredients.add("jajka");
-        myIngredients.add("maslo");
-        myIngredients.add("kielbasa");
+        for (int i = 0; i < userIngredients.length; i++) {
+            myIngredients.add(userIngredients[i]);
+        }
         return myIngredients;
     }
 
